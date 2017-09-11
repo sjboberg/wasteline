@@ -10,3 +10,14 @@ exports.getAllItems = (cb) => {
     }
   });
 };
+
+exports.addItem = (name, category, clean, cb) => {
+  var query = 'INSERT INTO items (name, category, clean) VALUES ($1, $2, $3);';
+  pool.query(query, [name, category, clean], function (err, result) {
+    if (err) {
+      cb(err, null);
+    } else {
+      cb(null, true);
+    }
+  });
+};
