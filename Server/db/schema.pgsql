@@ -10,5 +10,6 @@ CREATE TABLE items (
   name VARCHAR(40),
   category VARCHAR(10),
   clean BOOLEAN NOT NULL DEFAULT FALSE,
+  image TEXT,
   PRIMARY KEY (id)
 );
