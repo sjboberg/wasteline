@@ -21,6 +21,7 @@
     "preset": "jest-expo"
   },
   "dependencies": {
+    "algoliasearch": "^3.24.3",
     "body-parser": "^1.18.0",
     "dotenv": "^4.0.0",
     "expo": "^20.0.0",
