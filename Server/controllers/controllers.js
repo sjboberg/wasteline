@@ -1,4 +1,5 @@
 var dbHandlers = require('../db/dbHandlers.js');
+var index = require('../../Algolia/algoliaConnection.js');
 
 exports.addItem = {
   post: (req, res) => {
@@ -6,7 +7,18 @@ exports.addItem = {
       if (err) {
         console.log(err);
       } else {
-        res.sendStatus(200);
+        index.addObjects([{
+          objectID: result,
+          name: req.body.name,
+          category: req.body.category,
+          clean: req.body.clean
+        }], (err, content) => {
+          if (err) {
+            console.log(err);
+          } else {
+            res.sendStatus(200);
+          }
+        });
       }
     });
   }
