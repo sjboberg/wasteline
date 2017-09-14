@@ -1,11 +1,11 @@
 const pg = require('pg');
 
 var config = {
-  user: process.env.USER || 'postgres',
-  password: process.env.DB_PASSWORD || '',
-  database: process.env.DB_NAME || 'wasteline',
-  host: process.env.DB_URL || 'localhost',
-  port: 5432,
+  user: process.env.RDS_USERNAME || 'postgres',
+  password: process.env.RDS_PASSWORD || '',
+  database: process.env.RDS_DB_NAME || 'wasteline',
+  host: process.env.RDS_HOSTNAME || 'localhost',
+  port: process.env.RDS_PORT || 5432,
   max: 10,
   idleTimeoutMillis: 30000
 };
