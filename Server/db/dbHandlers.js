@@ -12,12 +12,12 @@ exports.getAllItems = (cb) => {
 };
 
 exports.addItem = (name, category, clean, cb) => {
-  var query = 'INSERT INTO items (name, category, clean) VALUES ($1, $2, $3);';
+  var query = 'INSERT INTO items (name, category, clean) VALUES ($1, $2, $3) RETURNING id;';
   pool.query(query, [name, category, clean], function (err, result) {
     if (err) {
       cb(err, null);
     } else {
-      cb(null, true);
+      cb(null, result.rows[0].id);
     }
   });
 };
