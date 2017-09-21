@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 var router = require('./router.js');
 
 var app = express();
-var IP = process.env.IP || 'localhost';
+// var IP = process.env.IP || 'localhost';
 var port = process.env.PORT || 3000;
 
 app.use(bodyParser.urlencoded({extended: true}));
