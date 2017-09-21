@@ -23,3 +23,9 @@ exports.addItem = {
     });
   }
 }
+
+exports.testConnection = {
+  get: (req, res) => {
+    res.sendStatus(200);
+  }
+}
